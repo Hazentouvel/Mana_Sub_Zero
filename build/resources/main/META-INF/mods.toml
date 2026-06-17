@@ -1,0 +1,33 @@
+# The name of the mod loader type to load
+modLoader = "javafml"
+
+# A version range to match for said mod loader
+loaderVersion = "[47,)"
+
+# The license for you mod
+license = "MIT"
+
+[[mods]]
+# FIXED: Changed from hyphens to underscores to match ManaSubZero.MODID
+modId = "mana_sub_zero"
+version = "1.0.0"
+displayName = "Mana Sub Zero"
+authors = "YourName"
+description = '''
+A cool magic mod adding frost-based mana elements into Minecraft.
+'''
+
+# FIXED: Dependency blocks updated with underscores
+[[dependencies.mana_sub_zero]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.mana_sub_zero]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,1.21)"
+ordering = "NONE"
+side = "BOTH"
