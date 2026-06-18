@@ -1,5 +1,15 @@
 {
-  "itemGroup.examplemod": "Example Mod Tab",
-  "block.examplemod.example_block": "Example Block",
-  "item.examplemod.example_item": "Example Item"
+  "item.mana_sub_zero.terrible_warlock_helmet": "Terrible Warlock Helmet",
+  "item.mana_sub_zero.terrible_warlock_chestplate": "Terrible Warlock Chestplate",
+  "item.mana_sub_zero.terrible_warlock_leggings": "Terrible Warlock Leggings",
+  "item.mana_sub_zero.terrible_warlock_boots": "Terrible Warlock Boots",
+
+  "item.mana_sub_zero.abyssal_warlock_helmet": "Abyssal Warlock Helmet",
+  "item.mana_sub_zero.abyssal_warlock_chestplate": "Abyssal Warlock Chestplate",
+  "item.mana_sub_zero.abyssal_warlock_leggings": "Abyssal Warlock Leggings",
+  "item.mana_sub_zero.abyssal_warlock_boots": "Abyssal Warlock Boots",
+
+
+  "creativetab.mana_sub_zero.mana_sub_zero_materials": "Mana SubZero Materials",
+  "creativetab.mana_sub_zero.mana_sub_zero_gear": "Mana SubZero Gear"
 }

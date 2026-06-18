@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mana_sub_zero:item/armor_icons/terrible_warlock_chestplate"
+  }
+}
