@@ -18,7 +18,7 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 public class AbyssalWarlockArmorItem extends ImbuableExtendedGeoArmorItem implements IDisableJacket {
     public AbyssalWarlockArmorItem(Type slot, Properties settings) {
         super(MsZArmorMaterials.ABYSSAL_WARLOCK, slot, settings,
-                new AttributeContainer(AttributeRegistry.ENDER_SPELL_POWER,0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER,0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
                 new AttributeContainer(ASAttributeRegistry.HYDRO_MAGIC_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 125, AttributeModifier.Operation.ADD_VALUE)
         );

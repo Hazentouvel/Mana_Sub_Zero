@@ -3,6 +3,7 @@ package net.hazen.mana_sub_zero;
 import net.hazen.mana_sub_zero.Registries.MsZArmorMaterials;
 import net.hazen.mana_sub_zero.Registries.MsZCreativeTabs;
 import net.hazen.mana_sub_zero.Registries.MsZItemRegistry;
+import net.hazen.mana_sub_zero.Registries.MsZSpellRegistry;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -33,6 +34,7 @@ public class ManaSubZero {
         MsZArmorMaterials.register(modEventBus);
         MsZCreativeTabs.register(modEventBus);
         MsZItemRegistry.register(modEventBus);
+        MsZSpellRegistry.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
