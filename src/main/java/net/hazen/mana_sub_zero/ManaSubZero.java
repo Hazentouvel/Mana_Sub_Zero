@@ -1,9 +1,16 @@
 package net.hazen.mana_sub_zero;
 
-import net.hazen.mana_sub_zero.Registries.MsZArmorMaterials;
-import net.hazen.mana_sub_zero.Registries.MsZCreativeTabs;
-import net.hazen.mana_sub_zero.Registries.MsZItemRegistry;
-import net.hazen.mana_sub_zero.Registries.MsZSpellRegistry;
+import dev.obscuria.aquamirae.common.event.PathDefinition;
+import dev.obscuria.aquamirae.common.region.noise.PackedNoise;
+import dev.obscuria.aquamirae.config.CommonConfig;
+import dev.obscuria.aquamirae.network.*;
+import dev.obscuria.aquamirae.registry.*;
+import dev.obscuria.aquamirae.server.AnimationCommand;
+import dev.obscuria.aquamirae.server.TestCommand;
+import dev.obscuria.fragmentum.content.network.FragmentumNetworking;
+import dev.obscuria.fragmentum.content.network.PayloadRegistrar;
+import dev.obscuria.fragmentum.server.FragmentumServerRegistry;
+import net.hazen.mana_sub_zero.Registries.*;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -32,12 +39,22 @@ public class ManaSubZero {
         NeoForge.EVENT_BUS.register(this);
 
         MsZArmorMaterials.register(modEventBus);
+        MsZEntityRegistry.register(modEventBus);
         MsZCreativeTabs.register(modEventBus);
         MsZItemRegistry.register(modEventBus);
         MsZSpellRegistry.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
+
+    public static void init() {
+        ManaSubZeroRegistries.init();
+        registerPayloads();
+    }
+
+    private static void registerPayloads() {
+        PayloadRegistrar registrar = FragmentumNetworking.registrar("mana_sub_zero");
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
