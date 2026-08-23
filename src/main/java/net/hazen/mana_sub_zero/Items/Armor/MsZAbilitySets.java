@@ -1,28 +1,18 @@
 package net.hazen.mana_sub_zero.Items.Armor;
 
 import dev.obscuria.aquamirae.Aquamirae;
-import dev.obscuria.aquamirae.api.common.ability.AbilityConditions;
-import dev.obscuria.aquamirae.api.common.ability.AbilityCounters;
 import dev.obscuria.aquamirae.api.common.ability.AbilitySet;
 import dev.obscuria.aquamirae.api.common.ability.AbilityStyles;
-import dev.obscuria.aquamirae.api.common.ability.resolver.ComponentAbilitySetResolver;
-import dev.obscuria.aquamirae.api.common.ability.resolver.CompositeAbilitySetResolver;
 import dev.obscuria.aquamirae.api.common.ability.resolver.EquipmentAbilitySetResolver;
 import dev.obscuria.aquamirae.common.ability.armor.*;
 import dev.obscuria.aquamirae.common.ability.weapon.*;
-import dev.obscuria.aquamirae.registry.AquamiraeDataComponents;
-import dev.obscuria.aquamirae.registry.AquamiraeItems;
 import dev.obscuria.aquamirae.registry.AquamiraeRegistries;
 import dev.obscuria.fragmentum.content.registry.Deferred;
 import net.hazen.mana_sub_zero.Items.Armor.AbyssalWarlockArmor.AbyssalWarlockArmorFullSetAbility;
 import net.hazen.mana_sub_zero.Items.Armor.AbyssalWarlockArmor.AbyssalWarlockArmorHalfSetAbility;
-import net.hazen.mana_sub_zero.ManaSubZero;
-import net.hazen.mana_sub_zero.ManaSubZeroRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.world.entity.EquipmentSlot;
 
-import java.util.Objects;
 import java.util.function.Consumer;
 
 public class MsZAbilitySets {
@@ -36,7 +26,7 @@ public class MsZAbilitySets {
     }
 
     private static Deferred<AbilitySet, AbilitySet> register(String name, Consumer<AbilitySet.Builder> consumer) {
-        return ManaSubZeroRegistries.REGISTRAR.register(AquamiraeRegistries.Key.ABILITY_SET, ManaSubZero.id(name), () -> {
+        return AquamiraeRegistries.REGISTRAR.register(AquamiraeRegistries.Key.ABILITY_SET, Aquamirae.id(name), () -> {
             AbilitySet.Builder builder = AbilitySet.builder();
             consumer.accept(builder);
             return builder.build();

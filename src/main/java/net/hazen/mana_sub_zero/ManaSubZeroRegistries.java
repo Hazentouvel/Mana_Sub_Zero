@@ -36,7 +36,7 @@ public final class ManaSubZeroRegistries {
         }
 
         private static <T> ResourceKey<Registry<T>> create(String name) {
-            return ResourceKey.createRegistryKey(Aquamirae.id(name));
+            return ResourceKey.createRegistryKey(ManaSubZero.id(name));
         }
     }
 }
