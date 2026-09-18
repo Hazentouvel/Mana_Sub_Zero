@@ -48,15 +48,6 @@ public class ManaSubZero {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    public static void init() {
-        ManaSubZeroRegistries.init();
-        registerPayloads();
-    }
-
-    private static void registerPayloads() {
-        PayloadRegistrar registrar = FragmentumNetworking.registrar("mana_sub_zero");
-    }
-
     private void commonSetup(FMLCommonSetupEvent event) {
 
     }

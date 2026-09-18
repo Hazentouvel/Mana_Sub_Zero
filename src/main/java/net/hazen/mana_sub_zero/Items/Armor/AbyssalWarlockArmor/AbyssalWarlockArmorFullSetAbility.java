@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package net.hazen.mana_sub_zero.Items.Armor.AbyssalWarlockArmor;
 
 import dev.obscuria.aquamirae.api.common.ability.SimpleAbility;

@@ -190,6 +190,15 @@ dependencies {
     //HazentouveLib ***********************************************************************************************
     implementation "curse.maven:hazentouvelib-1528722:8666581"
     implementation "curse.maven:caelus-308989:5694215"
+
+
+    // Embeddium
+    localRuntime "curse.maven:embeddium-908741:6118392"
+
+    // MmmMmmMmm
+    localRuntime "curse.maven:mmm-225738:7206981"
+    localRuntime "curse.maven:moonlight_lib-499980:7669172"
+
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

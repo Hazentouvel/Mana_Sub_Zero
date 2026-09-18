@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.hazen.mana_sub_zero.Mixins",
+  "refmap": "mana_sub_zero.refmap.json",
+  "plugin": "net.hazen.mana_sub_zero.Mixins.HLMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
