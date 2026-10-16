@@ -1,43 +1,44 @@
 package net.hazen.mana_sub_zero.Entities.Projectiles.Chakrams.PyriumChakram;
 
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import dev.obscuria.aquamirae.Aquamirae;
-import dev.obscuria.aquamirae.client.model.AquamiraeModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.cache.object.BakedGeoModel;
+import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class PyriumChakramRenderer<T extends PyriumChakram> extends EntityRenderer<T> {
-    public static final ResourceLocation TEXTURE = Aquamirae.id("textures/entity/maze_rose.png");
-    private final PyriumChakramModel<T> model;
-
+public class PyriumChakramRenderer extends GeoEntityRenderer<PyriumChakram> {
     public PyriumChakramRenderer(EntityRendererProvider.Context context) {
-        super(context);
-        this.model = new PyriumChakramModel<>(context.bakeLayer(AquamiraeModelLayers.MAZE_ROSE));
+        super(context, new PyriumChakramModel());
+        this.shadowRadius = 0f;
     }
 
-    public void render(T entity, float entityYaw, float partialTicks, PoseStack pose, MultiBufferSource buffer, int packedLight) {
-        pose.pushPose();
-        float yaw = Mth.rotLerp(partialTicks, entity.yRotO, entity.getYRot());
-        float pitch = Mth.lerp(partialTicks, entity.xRotO, entity.getXRot());
-        pose.mulPose(Axis.YP.rotationDegrees(yaw + 180.0F));
-        pose.mulPose(Axis.XP.rotationDegrees(pitch));
-        pose.scale(-1.0F, -1.0F, 1.0F);
-        pose.translate(0.0F, -1.501F, 0.0F);
-        float ageInTicks = (float)entity.tickCount + partialTicks;
-        this.model.setupAnim(entity, 0.0F, 0.0F, ageInTicks, yaw, pitch);
-        VertexConsumer consumer = buffer.getBuffer(this.model.renderType(this.getTextureLocation(entity)));
-        this.model.renderToBuffer(pose, consumer, packedLight, OverlayTexture.NO_OVERLAY, -1);
-        pose.popPose();
-        super.render(entity, entityYaw, partialTicks, pose, buffer, packedLight);
+    @Override
+    public void preRender(PoseStack poseStack, PyriumChakram animatable, BakedGeoModel model,
+                          @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer,
+                          boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour) {
+
+        Vec3 motion = animatable.getDeltaMovement();
+
+        float xRot = (float) (-(Mth.atan2(motion.y, motion.horizontalDistance()) * (180F / Math.PI)));
+        float yRot = -((float) (Mth.atan2(motion.z, motion.x) * (180F / (float) Math.PI)) + 90.0F) + 180.0F;
+
+        poseStack.mulPose(Axis.YP.rotationDegrees(yRot));
+        poseStack.mulPose(Axis.XP.rotationDegrees(xRot));
+
+        super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);
     }
 
-    public ResourceLocation getTextureLocation(T entity) {
-        return TEXTURE;
+    @Override
+    public RenderType getRenderType(PyriumChakram animatable, ResourceLocation texture, @Nullable MultiBufferSource bufferSource, float partialTick) {
+        return RenderType.breezeEyes(texture);
     }
+
 }

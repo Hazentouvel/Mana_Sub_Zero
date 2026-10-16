@@ -1,12 +1,8 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package net.hazen.mana_sub_zero.Items.Weapons.Chakrams.PyriumChakram;
 
 import dev.obscuria.aquamirae.common.entity.projectile.TerribleChakram;
 import dev.obscuria.aquamirae.registry.AquamiraeEntityTypes;
+import net.hazen.mana_sub_zero.Entities.Projectiles.Chakrams.PyriumChakram.PyriumChakram;
 import net.hazen.mana_sub_zero.Registries.MsZEntityRegistry;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -26,7 +22,7 @@ public class PyriumChakramItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         ItemStack stack = player.getItemInHand(usedHand);
         if (!level.isClientSide) {
-            TerribleChakram projectile = new TerribleChakram((EntityType) MsZEntityRegistry.PYRIUM_CHAKRAM.get(), level);
+            PyriumChakram projectile = new PyriumChakram((EntityType) MsZEntityRegistry.PYRIUM_CHAKRAM.get(), level);
             projectile.setOwner(player);
             projectile.setPos(player.position().lerp(player.getEyePosition(), (double)0.5F));
             projectile.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 0.5F);

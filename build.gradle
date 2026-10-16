@@ -57,8 +57,8 @@ repositories {
     }
 
     maven {
-        name = "AzureDoom Mods"
-        url = "https://maven.azuredoom.com/mods"
+        name = "Kotlin for Forge"
+        setUrl("https://thedarkcolour.github.io/KotlinForForge/")
     }
 
     maven { url = "https://maven.theillusivec4.top" }
@@ -155,41 +155,35 @@ configurations {
 }
 
 dependencies {
-    // ISS ********************************************************************************************************
-    implementation "io.redspace:irons_spellbooks:1.21.1-3.16.0"
+    //Iron's Spells 'n Spellbooks **************************************************************************************
+    implementation "curse.maven:irons_spells_n_spellbooks-855414:8680204"
+    implementation "curse.maven:iron_lib-1492763:8973642"
+    implementation "curse.maven:geckolib-388172:8350073"
+    implementation "curse.maven:player_animator-658587:7389814"
+    implementation "curse.maven:curios-309927:6529130"
+    implementation "curse.maven:caelus-308989:5694215"
 
-    // Iron's Lib
-    implementation "io.redspace:irons_lib:${irons_lib_version}"
+    //Ace Utils ********************************************************************************************************
+    implementation "curse.maven:ace_utils-1299492:9073632"
+
+    //HazentouveLib ****************************************************************************************************
+    implementation "curse.maven:hazentouvelib-1528722:8977077"
 
     // GECKOLIB ***************************************************************************************************
     implementation "curse.maven:geckolib-388172:8350073"
-
-    // CURIOS *****************************************************************************************************
-    implementation "curse.maven:curios-309927:6274154"
-
-    // CAELUS *****************************************************************************************************
-    compileOnly "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}:api"
-    localRuntime "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}"
-
-    // PLAYER ANIMATOR ********************************************************************************************
-    implementation "curse.maven:playeranimator-658587:6024462"
-
-    // JEI ********************************************************************************************************
-    implementation "curse.maven:jei-238222:6756166"
-
-    // Jade *******************************************************************************************************
-    implementation "curse.maven:jade-324717:6853386"
 
     // Ace's Spell Utils ******************************************************************************************
     implementation "curse.maven:aces-spell-utils-1299492:8466924"
 
     // Aquamirae **************************************************************************************************
-    implementation "curse.maven:aquamirae-536254:8707570"
-    implementation "curse.maven:fragmentum-1123977:8707553"
+    implementation "curse.maven:aquamirae-536254:9131368"
+    implementation "curse.maven:fragmentum-1123977:9202578"
 
-    //HazentouveLib ***********************************************************************************************
-    implementation "curse.maven:hazentouvelib-1528722:8666581"
-    implementation "curse.maven:caelus-308989:5694215"
+    // JEI ********************************************************************************************************
+    localRuntime "curse.maven:jei-238222:6756166"
+
+    // Jade *******************************************************************************************************
+    localRuntime "curse.maven:jade-324717:6853386"
 
 
     // Embeddium

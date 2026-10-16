@@ -1,15 +1,7 @@
 package net.hazen.mana_sub_zero;
 
-import dev.obscuria.aquamirae.common.event.PathDefinition;
-import dev.obscuria.aquamirae.common.region.noise.PackedNoise;
-import dev.obscuria.aquamirae.config.CommonConfig;
-import dev.obscuria.aquamirae.network.*;
-import dev.obscuria.aquamirae.registry.*;
-import dev.obscuria.aquamirae.server.AnimationCommand;
-import dev.obscuria.aquamirae.server.TestCommand;
-import dev.obscuria.fragmentum.content.network.FragmentumNetworking;
-import dev.obscuria.fragmentum.content.network.PayloadRegistrar;
-import dev.obscuria.fragmentum.server.FragmentumServerRegistry;
+import io.redspace.ironsspellbooks.item.SpellBook;
+import io.redspace.ironsspellbooks.render.SpellBookCurioRenderer;
 import net.hazen.mana_sub_zero.Registries.*;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
@@ -29,6 +21,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 @Mod(ManaSubZero.MOD_ID)
 public class ManaSubZero {
@@ -63,8 +56,9 @@ public class ManaSubZero {
     @EventBusSubscriber({Dist.CLIENT})
     static class ClientModEvents {
         @SubscribeEvent
-        static void onClientSetup(FMLClientSetupEvent event) {
+        public static void onClientSetup(FMLClientSetupEvent event) {
 
+            MsZItemRegistry.getMsZItems().stream().filter(item -> item.get() instanceof SpellBook).forEach((item) -> CuriosRendererRegistry.register(item.get(), SpellBookCurioRenderer::new));
         }
     }
 

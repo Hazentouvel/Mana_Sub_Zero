@@ -14,7 +14,7 @@ public class HnSClientSetup {
     public static void registerRenderer(EntityRenderersEvent.RegisterRenderers event) {
 
         /*
-         *** Spells
+         *** Weapons
          */
         event.registerEntityRenderer(MsZEntityRegistry.PYRIUM_CHAKRAM.get(), PyriumChakramRenderer::new);
 

@@ -9,6 +9,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -22,15 +23,15 @@ public class MsZArmorMaterials {
     private static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, ManaSubZero.MOD_ID);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> TERRIBLE_WARLOCK = register("terrible_warlock",
-            pureArmorMap(),
+            ironArmorMap(),
             20,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
-            () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
-            4,
+            () -> Ingredient.of(ItemRegistry.MAGIC_CLOTH.get()),
+            2,
             0.15F);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> ABYSSAL_WARLOCK = register("abyssal_warlock",
-            pureArmorMap(),
+            netheriteArmorMap(),
             20,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
@@ -61,9 +62,14 @@ public class MsZArmorMaterials {
         });
     }
 
-    public static EnumMap<ArmorItem.Type, Integer> pureArmorMap()
+    public static EnumMap<ArmorItem.Type, Integer> netheriteArmorMap()
     {
-        return makeArmorMap(5, 10, 8, 5);
+        return makeArmorMap(3, 8, 6, 3);
+    }
+
+    public static EnumMap<ArmorItem.Type, Integer> ironArmorMap()
+    {
+        return makeArmorMap(2, 5, 3, 1);
     }
 
     public static void register(IEventBus eventBus)

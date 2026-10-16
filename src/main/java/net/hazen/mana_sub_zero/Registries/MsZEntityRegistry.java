@@ -14,17 +14,17 @@ public class MsZEntityRegistry {
     private static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister
             .create(Registries.ENTITY_TYPE, ManaSubZero.MOD_ID);
 
+
     /*
-    *** Spells
+     *** Weapons
      */
 
-    // Soulflame Bolt
+    // Pyrium Chakram
     public static final DeferredHolder<EntityType<?>, EntityType<PyriumChakram>> PYRIUM_CHAKRAM =
             ENTITIES.register("pyrium_chakram", () -> EntityType.Builder.<PyriumChakram>of(PyriumChakram::new, MobCategory.MISC)
                     .sized(1.2F, 0.6F)
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(ManaSubZero.MOD_ID, "pyrium_chakram").toString()));
-
 
     public static void register(IEventBus eventBus)
     {

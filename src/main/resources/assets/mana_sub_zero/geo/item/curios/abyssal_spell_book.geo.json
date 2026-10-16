@@ -1,0 +1,53 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "spellbook",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-2, 0, -5], "size": [1, 7, 10], "uv": [0, 17]},
+						{"origin": [-2, 0, -5], "size": [4, 7, 10], "inflate": 0.25, "uv": [0, 0]},
+						{"origin": [1, 0, -5], "size": [1, 7, 10], "uv": [22, 17]},
+						{"origin": [-1, 6, -5], "size": [2, 1, 10], "uv": [28, 0]},
+						{"origin": [-1, 1, -4], "size": [2, 5, 8], "uv": [0, 34]}
+					]
+				},
+				{
+					"name": "crystals",
+					"parent": "spellbook",
+					"pivot": [0, 7, 3],
+					"rotation": [-67.5, 0, 0],
+					"cubes": [
+						{"origin": [-1, 7, 3], "size": [2, 6, 2], "uv": [20, 34]},
+						{"origin": [-1, 0, 0], "size": [2, 6, 2], "uv": [36, 34]},
+						{"origin": [-3, 0, 0], "size": [2, 4, 2], "uv": [20, 42]},
+						{"origin": [-1.5, -1, -1], "size": [2, 4, 2], "uv": [28, 42]},
+						{"origin": [-1, 5, 5], "size": [2, 4, 2], "uv": [28, 11]},
+						{"origin": [-3, 5, 4], "size": [2, 6, 2], "uv": [28, 34]}
+					]
+				},
+				{
+					"name": "rotate",
+					"parent": "spellbook",
+					"pivot": [-2, 3.5, 0.5],
+					"rotation": [45, 0, 0],
+					"cubes": [
+						{"origin": [-2.5, 2, -1], "size": [1, 3, 3], "uv": [36, 11]},
+						{"origin": [-2.5, 5, -2], "size": [1, 1, 2], "uv": [36, 42]},
+						{"origin": [-2.5, 4, -2], "size": [1, 1, 1], "uv": [42, 42]}
+					]
+				}
+			]
+		}
+	]
+}
