@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "aquamirae:fin"
+  },
+  "base": {
+    "tag": "irons_spellbooks:wizard_base_boots"
+  },
+  "result": {
+    "count": 1,
+    "id": "mana_sub_zero:terrible_warlock_boots"
+  },
+  "template": {
+    "item": "aquamirae:terrible_upgrade_smithing_template"
+  }
+}

@@ -1,5 +1,6 @@
 package net.hazen.mana_sub_zero.Items.Armor.TerribleWarlockArmor;
 
+import io.redspace.ironsspellbooks.IronsSpellbooks;
 import net.hazen.mana_sub_zero.ManaSubZero;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.DefaultedEntityGeoModel;
@@ -21,6 +22,6 @@ public class TerribleWarlockArmorModel extends DefaultedEntityGeoModel<TerribleW
 
     @Override
     public ResourceLocation getAnimationResource(TerribleWarlockArmorItem animatable) {
-        return ResourceLocation.fromNamespaceAndPath("irons_spellbooks", "animations/wizard_armor_animation.json");
+        return ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "animations/wizard_armor_animation.json");
     }
 }

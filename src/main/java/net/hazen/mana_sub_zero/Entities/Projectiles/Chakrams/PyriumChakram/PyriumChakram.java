@@ -6,16 +6,17 @@ import net.acetheeldritchking.aces_spell_utils.vfx.ribbon.ColorRamp;
 import net.acetheeldritchking.aces_spell_utils.vfx.ribbon.Curve;
 import net.acetheeldritchking.aces_spell_utils.vfx.ribbon.Easing;
 import net.acetheeldritchking.aces_spell_utils.vfx.ribbon.RibbonConfig;
+import net.hazen.hazentouvelib.Blocks.SoulFire.SoulFireData;
 import net.hazen.mana_sub_zero.Entities.Projectiles.Chakrams.GeckolibChakram;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
-import software.bernie.geckolib.animatable.GeoEntity;
 
-public class PyriumChakram extends GeckolibChakram implements GeoEntity {
+public class PyriumChakram extends GeckolibChakram {
 
     public PyriumChakram(EntityType<? extends PyriumChakram> type, Level level) {
         super(type, level, 20);
@@ -48,10 +49,25 @@ public class PyriumChakram extends GeckolibChakram implements GeoEntity {
     }
 
     protected void onHurtEntity(EntityHitResult result) {
-        Entity var3 = result.getEntity();
-        if (var3 instanceof LivingEntity entity) {
+        Entity target = result.getEntity();
+        DamageSource damageSource;
+        if (target instanceof LivingEntity entity) {
             entity.addEffect(new MobEffectInstance(MobEffectRegistry.SOUL_BURN, 60, 0));
         }
+
+        if (target instanceof LivingEntity owner) {
+            damageSource = this.damageSources().mobProjectile(this, owner);
+        } else {
+            damageSource = this.damageSources().generic();
+        }
+
+        if (target.hurt(damageSource, 6.0F)) {
+            if (target instanceof LivingEntity livingEntity) {
+                SoulFireData.addSoulFireTicks(livingEntity, 30);
+            }
+            this.onHurtEntity(result);
+        }
+
     }
 
 }

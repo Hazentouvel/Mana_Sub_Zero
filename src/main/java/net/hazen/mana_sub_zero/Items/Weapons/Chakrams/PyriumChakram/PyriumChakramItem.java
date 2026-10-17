@@ -33,4 +33,6 @@ public class PyriumChakramItem extends Item {
         level.playSound((Player)null, player.blockPosition(), (SoundEvent)SoundEvents.TRIDENT_THROW.value(), player.getSoundSource(), 1.0F, (float)level.getRandom().triangle((double)1.0F, (double)0.2F));
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
     }
+
+
 }

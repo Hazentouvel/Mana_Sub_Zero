@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "aquamirae:abyssal_amethyst"
+  },
+  "base": {
+    "tag": "hazentouvelib:armors/netherite_battlemage/netherite_battlemage_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "mana_sub_zero:abyssal_warlock_helmet"
+  },
+  "template": {
+    "item": "aquamirae:abyssal_upgrade_smithing_template"
+  }
+}

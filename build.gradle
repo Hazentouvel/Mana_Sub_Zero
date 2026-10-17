@@ -27,6 +27,8 @@ sourceSets.main.resources {
 }
 
 repositories {
+    mavenCentral()
+
     maven {
         name = "Iron's Maven - Release"
         url = "https://code.redspace.io/releases"
@@ -54,11 +56,6 @@ repositories {
         content {
             includeGroup("software.bernie.geckolib")
         }
-    }
-
-    maven {
-        name = "Kotlin for Forge"
-        setUrl("https://thedarkcolour.github.io/KotlinForForge/")
     }
 
     maven { url = "https://maven.theillusivec4.top" }
@@ -193,6 +190,7 @@ dependencies {
     localRuntime "curse.maven:mmm-225738:7206981"
     localRuntime "curse.maven:moonlight_lib-499980:7669172"
 
+    compileOnly("org.jetbrains.kotlin:kotlin-stdlib:2.2.20")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

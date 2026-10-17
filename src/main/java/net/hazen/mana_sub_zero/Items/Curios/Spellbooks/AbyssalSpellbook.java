@@ -23,10 +23,9 @@ public class AbyssalSpellbook extends SpellBook implements GeoItem {
     public AbyssalSpellbook() {
         super(10);
         this.withSpellbookAttributes(new AttributeContainer[]{
+                new AttributeContainer(AquamiraeAttributes.DEPTHS_FURY.holder(), 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
                 new AttributeContainer(ASAttributeRegistry.HYDRO_MAGIC_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
                 new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, (double)0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-                new AttributeContainer((Holder<Attribute>) AquamiraeAttributes.DEPTHS_FURY, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-                new AttributeContainer((Holder<Attribute>) AquamiraeAttributes.DEPTHS_RESILIENCE, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
                 new AttributeContainer(AttributeRegistry.MAX_MANA, (double)200.0F, AttributeModifier.Operation.ADD_VALUE)
 
         });

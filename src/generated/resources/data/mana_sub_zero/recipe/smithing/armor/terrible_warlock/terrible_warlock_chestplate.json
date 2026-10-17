@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "aquamirae:fin"
+  },
+  "base": {
+    "tag": "irons_spellbooks:wizard_base_chestplate"
+  },
+  "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [],
+        "maxSpells": 1,
+        "mustEquip": true,
+        "spellWheel": true
+      }
+    },
+    "count": 1,
+    "id": "mana_sub_zero:terrible_warlock_chestplate"
+  },
+  "template": {
+    "item": "aquamirae:terrible_upgrade_smithing_template"
+  }
+}

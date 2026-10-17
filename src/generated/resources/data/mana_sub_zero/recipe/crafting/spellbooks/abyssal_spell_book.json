@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "aquamirae:abyssal_amethyst"
+    },
+    "C": {
+      "item": "irons_spellbooks:magic_cloth"
+    },
+    "M": {
+      "item": "irons_spellbooks:mithril_scrap"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "R": {
+      "item": "irons_spellbooks:ruined_book"
+    }
+  },
+  "pattern": [
+    "CMC",
+    "ARA",
+    "CNC"
+  ],
+  "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [],
+        "maxSpells": 10,
+        "mustEquip": true,
+        "spellWheel": true
+      }
+    },
+    "count": 1,
+    "id": "mana_sub_zero:abyssal_spellbook"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": {
+      "item": "irons_spellbooks:mithril_scrap"
+    },
+    "P": {
+      "item": "irons_spellbooks:pyrium_ingot"
+    },
+    "S": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "W": {
+      "item": "irons_spellbooks:weapon_parts"
+    }
+  },
+  "pattern": [
+    "SWS",
+    "MPM",
+    "SMS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mana_sub_zero:pyrium_chakram"
+  }
+}

@@ -36,9 +36,4 @@ public class PyriumChakramRenderer extends GeoEntityRenderer<PyriumChakram> {
         super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);
     }
 
-    @Override
-    public RenderType getRenderType(PyriumChakram animatable, ResourceLocation texture, @Nullable MultiBufferSource bufferSource, float partialTick) {
-        return RenderType.breezeEyes(texture);
-    }
-
 }

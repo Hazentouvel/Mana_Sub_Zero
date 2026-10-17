@@ -2,7 +2,7 @@
   "parent": "minecraft:item/handheld",
   "loader": "neoforge:separate_transforms",
   "base": {
-    "parent": "irons_spellbooks:item/template_spell_book_model"
+    "parent": "mana_sub_zero:item/abyssal_spellbook_model"
   },
   "perspectives": {
     "gui": {
@@ -10,6 +10,9 @@
       "textures": {
         "layer0": "mana_sub_zero:item/curios/gui/abyssal_spell_book"
       }
+    },
+    "fixed": {
+      "parent": "mana_sub_zero:item/abyssal_spellbook_fixed"
     }
   }
 }

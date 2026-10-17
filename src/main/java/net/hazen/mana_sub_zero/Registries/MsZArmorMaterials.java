@@ -27,8 +27,8 @@ public class MsZArmorMaterials {
             20,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ItemRegistry.MAGIC_CLOTH.get()),
-            2,
-            0.15F);
+            0,
+            0.0F);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> ABYSSAL_WARLOCK = register("abyssal_warlock",
             netheriteArmorMap(),
@@ -36,7 +36,7 @@ public class MsZArmorMaterials {
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
             4,
-            0.15F);
+            0.0F);
 
     private static DeferredHolder<ArmorMaterial, ArmorMaterial> register(
             String name,

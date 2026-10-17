@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "aquamirae:fin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mana_sub_zero:smithing/armor/terrible_warlock/terrible_warlock_helmet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fin"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mana_sub_zero:smithing/armor/terrible_warlock/terrible_warlock_helmet"
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 package net.hazen.mana_sub_zero.Items.Armor.AbyssalWarlockArmor;
 
+import dev.obscuria.aquamirae.registry.AquamiraeAttributes;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
@@ -24,6 +25,7 @@ public class AbyssalWarlockArmorItem extends ImbuableExtendedGeoArmorItem implem
                         .rarity(HLRarities.HYDRO_RARITY.getValue())
                         .stacksTo(1)
                 ,
+                new AttributeContainer(AquamiraeAttributes.DEPTHS_RESILIENCE.holder(), 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
                 new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER,0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
                 new AttributeContainer(ASAttributeRegistry.HYDRO_MAGIC_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 125, AttributeModifier.Operation.ADD_VALUE)

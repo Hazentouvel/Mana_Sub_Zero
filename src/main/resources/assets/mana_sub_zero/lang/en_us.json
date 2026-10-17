@@ -1,6 +1,7 @@
 {
   "item.mana_sub_zero.mithril_chakram": "Mithril Chakram",
   "item.mana_sub_zero.pyrium_chakram": "Pyrium Chakram",
+  "tooltip.mana_sub_zero.pyrium_chakram": "A returning ranged weapon. Stack up to 6 to reduce its throwing cooldown. Inflicts Soul Rend on hit.",
 
   "item.mana_sub_zero.abyssal_spellbook": "Abyssal Spellbook",
 
@@ -9,10 +10,14 @@
   "item.mana_sub_zero.terrible_warlock_leggings": "Terrible Warlock Leggings",
   "item.mana_sub_zero.terrible_warlock_boots": "Terrible Warlock Boots",
 
+  "ability.mana_sub_zero.terrible_warlock_armor.full": "",
+
   "item.mana_sub_zero.abyssal_warlock_helmet": "Abyssal Warlock Helmet",
   "item.mana_sub_zero.abyssal_warlock_chestplate": "Abyssal Warlock Chestplate",
   "item.mana_sub_zero.abyssal_warlock_leggings": "Abyssal Warlock Leggings",
   "item.mana_sub_zero.abyssal_warlock_boots": "Abyssal Warlock Boots",
+
+  "ability.mana_sub_zero.abyssal_warlock_armor.full_helmet": "",
 
   "entity.mana_sub_zero.mithril_chakram": "Mithril Chakram",
   "entity.mana_sub_zero.pyrium_chakram": "Pyrium Chakram",
